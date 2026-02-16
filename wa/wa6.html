@@ -4,16 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design System Template</title>
+    <title>David Doctor Design System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+
     <style>
         /* CSS Reset and Base Styles */
         :root {
             /* Color Palette - 5 Core Colors */
-            --color-primary: #3498db;     /* Vibrant Blue - Main Brand Color */
-            --color-secondary: #2ecc71;   /* Emerald Green - Complementary Action Color */
-            --color-accent: #e74c3c;      /* Passionate Red - Highlight / Warning Color */
-            --color-neutral: #34495e;     /* Deep Slate Gray - Neutral Text and Background */
-            --color-highlight: #f1c40f;   /* Bright Yellow - Accent / Attention Color */
+            --color-primary: #1D7874;     /* Deep Ocean - Main Brand Color */
+            --color-secondary: #679289;   /* Jungle Teal - Complementary Action Color */
+            --color-accent: #FF6663;      /* Vibrant Coral - Highlight / Warning Color */
+            --color-neutral: #54494B;     /* Taupe Grey - Neutral Text and Background */
+            --color-highlight: #F4C095;   /* Peach Glow - Accent / Attention Color */
             
             /* Derived Colors for Flexibility */
             --color-background: color-mix(in srgb, var(--color-neutral) 10%, white);
@@ -21,8 +26,8 @@
             --color-text-light: white;
 
             /* Typography */
-            --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-secondary: 'Roboto Mono', monospace;
+            --font-primary: "Josefin Sans", sans-serif;
+            --font-secondary: "Lexend Deca", sans-serif;
 
             /* Spacing System */
             --spacing-xs: 0.25rem;
@@ -35,6 +40,21 @@
             --radius-sm: 4px;
             --radius-md: 8px;
             --radius-lg: 12px;
+
+            /* Font */
+            .josefin-sans-<uniquifier> {
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+            }
+
+            .lexend-deca-<uniquifier> {
+            font-family: "Lexend Deca", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+            }
         }
 
         * {
@@ -76,16 +96,19 @@
             font-weight: 500;
             margin-bottom: var(--spacing-sm);
             color: var(--color-accent);
+            font-family: var(--font-secondary);
         }
 
         .body-text {
             font-size: 1rem;
             margin-bottom: var(--spacing-md);
+            font-family: var(--font-secondary);
         }
 
         .small-text {
             font-size: 0.75rem;
             color: color-mix(in srgb, var(--color-text-dark) 70%, transparent);
+            font-family: var(--font-secondary);
         }
 
         /* Color Palette Section */
@@ -119,7 +142,7 @@
         }
 
         .button:hover {
-            background-color: color-mix(in srgb, var(--color-primary) 80%, black);
+            background-color: color-mix(in srgb, var(--color-primary) 80%, white);
             border-color: var(--color-secondary);
             transform: scale(1.05);
         }
@@ -154,7 +177,7 @@
         }
 
         .spacing-block {
-            background-color: var(--color-primary);
+            background-color: var(--color-accent);
             height: 50px;
         }
     </style>
@@ -162,45 +185,45 @@
 </head>
 <body>
     <div class="container">
-        <h1>Design System Template</h1>
+        <h1>David Doctor's Design System</h1>
 
         <section>
             <h2>Color Palette</h2>
             <div class="color-palette">
                 <div class="color-swatch" style="background-color: var(--color-primary); color: var(--color-text-light);">
                     <strong>Primary Color</strong>
-                    <p>#3498db</p>
-                    <small>Contrast Ratio: 4.6:1</small>
+                    <p>#1D7874</p>
+                    <small>Contrast Ratio: 4.5:1</small>
                 </div>
                 <div class="color-swatch" style="background-color: var(--color-secondary); color: var(--color-text-light);">
                     <strong>Secondary Color</strong>
-                    <p>#2ecc71</p>
+                    <p>#679289</p>
                     <small>Contrast Ratio: 4.8:1</small>
                 </div>
                 <div class="color-swatch" style="background-color: var(--color-accent); color: var(--color-text-light);">
                     <strong>Accent Color</strong>
-                    <p>#e74c3c</p>
-                    <small>Contrast Ratio: 4.5:1</small>
+                    <p>#F78764</p>
+                    <small>Contrast Ratio: 2.4:1</small>
                 </div>
                 <div class="color-swatch" style="background-color: var(--color-neutral); color: var(--color-text-light);">
                     <strong>Neutral Color</strong>
-                    <p>#34495e</p>
-                    <small>Contrast Ratio: 4.7:1</small>
+                    <p>#54494B</p>
+                    <small>Contrast Ratio: 7.4:1</small>
                 </div>
                 <div class="color-swatch" style="background-color: var(--color-highlight); color: var(--color-text-dark);">
                     <strong>Highlight Color</strong>
-                    <p>#f1c40f</p>
-                    <small>Contrast Ratio: 4.9:1</small>
+                    <p>#F4C095</p>
+                    <small>Contrast Ratio: 1.4:1</small>
                 </div>
             </div>
         </section>
 
         <section>
             <h2>Typography</h2>
-            <h1>Heading 1 - Space Grotesk</h1>
-            <h2>Heading 2 - Space Grotesk</h2>
-            <h3>Heading 3 - Space Grotesk</h3>
-            <p class="body-text">Body Text - Using Space Grotesk with a comfortable line height and readable size.</p>
+            <h1>Heading 1 - Josefin Sans</h1>
+            <h2>Heading 2 - Josefin Sans</h2>
+            <h3>Heading 3 - Lexend Deca</h3>
+            <p class="body-text">Body Text - Using Lexend Deca with a comfortable line height and readable size.</p>
             <p class="small-text">Small Text - Subtle and understated, perfect for annotations and footnotes.</p>
         </section>
 
@@ -219,8 +242,8 @@
         <section>
             <h2>Interactive Components</h2>
             <a href="#" class="button">Primary Button</a>
-            <a href="#" class="link">Standard Link</a>
-            <a href="#" class="link" style="color: purple;">Visited Link</a>
+            <a href="#" class="link" style="color: var(--color-primary);">Standard Link</a>
+            <a href="#" class="link" style="color: var(--color-accent);">Visited Link</a>
         </section>
     </div>
 </body>
