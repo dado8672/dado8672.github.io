@@ -1,15 +1,15 @@
 /*Task 1*/
-body {
+.flex-1 body {
   font: 1.2em / 1.5 sans-serif;
 }
-nav ul {
+.flex-1 nav ul {
   max-width: 750px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
-nav a:link,
-nav a:visited {
+.flex-1 nav a:link,
+.flex-1 nav a:visited {
   background-color: #4d7298;
   border: 2px solid #77a6b6;
   border-radius: 0.5em;
@@ -19,23 +19,23 @@ nav a:visited {
   text-decoration: none;
 }
 
-nav ul {
+.flex-1 nav ul {
   display: flex;
   justify-content: space-between;
 }
 
 /*Task 2*/
-body {
+.flex-2 body {
   font: 1.2em / 1.5 sans-serif;
 }
-ul {
+.flex-2 ul {
   max-width: 750px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-li {
+.flex-2 li {
   background-color: #4d7298;
   border: 2px solid #77a6b6;
   border-radius: 0.5em;
@@ -43,26 +43,27 @@ li {
   padding: 0.5em;
 }
 
-ul {
+.flex-2 ul {
   display: flex;
 }
 
-li {
+.flex-2 li {
   flex: 1;
 }
 
 /*Task 3*/
-body {
+.flex-3 body {
   font: 1.2em / 1.5 sans-serif;
 }
-ul {
-  width: 450px;
+.flex-3 ul {
+  width: 350px;
+  length: 400px
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-li {
+.flex-3 li {
   background-color: #4d7298;
   border: 2px solid #77a6b6;
   border-radius: 0.5em;
@@ -71,11 +72,11 @@ li {
   margin: 0.5em;
 }
 
-ul {
+.flex-3 ul {
   display: flex;
   flex-wrap: wrap;
 }
 
-li {
-  flex: auto;
+.flex-3 li {
+  flex: 1 1 auto;
 }
