@@ -130,14 +130,14 @@
         }
 
         .button:hover {
-            background-color: color-mix(in srgb, var(--color-accent) 80%, white);
-            border-color: var(--color-accent);
+            background-color: color-mix(in srgb, var(--color-highlight) 80%, white);
+            border-color: var(--color-highlight);
             transform: scale(1.05);
         }
 
         .button:active {
             transform: scale(0.95);
-            background-color: var(--color-accent);
+            background-color: var(--color-highlight);
         }
 
         .link {
@@ -172,37 +172,54 @@
 
 
 
-/* Additional CSS */
+                                                /* Additional CSS */
+
+/* Background */
 html {
-    background: var(--color-background);
-    background-attachment: fixed; /*edit*/
+background: var(--color-background);
+background-attachment: fixed; 
 }
 
-.site-header{
+/* Nav Bar */
+.header{
 margin-bottom:var(--spacing-xl);
+font-size: 4rem;
 }
 
-.site-nav ul{
+nav ul{
 list-style:none;
 display:flex;
 gap:var(--spacing-lg);
+padding-bottom:var(--spacing-md);
 }
 
-.site-nav a{
+nav li a.selected{
+color: var(--color-accent);
+}
+
+nav a{
 color:var(--color-secondary);
 font-family:var(--font-secondary);
+font-size: 1.25rem;
 }
 
-.hero-box{
+/* Bio */
+.h1strong{
+color: var(--color-accent);
+}
+
+.bio-box{
 display:grid;
 grid-template-columns:1fr;
 gap:var(--spacing-lg);
 padding:var(--spacing-xl);
 border-radius:var(--radius-md);
 margin-bottom:var(--spacing-xl);
+max-width: 1200px;
+margin: 0 auto;
 }
 
-.hero-image img{
+.pfp{
 width:180px;
 height:180px;
 border-radius:50%;
@@ -211,10 +228,11 @@ display:block;
 margin:0 auto;
 }
 
-.hero-text{
+.bio-text{
 text-align:center;
 }
 
+/* Project Cards */
 .project-grid{
 display:grid;
 gap:var(--spacing-lg);
@@ -231,7 +249,6 @@ text-align: left;
 background-color: var(--color-card);
 }
 
-
 .project-card img{
 border-radius: var(--radius-lg);
 padding-top: 15px;
@@ -244,21 +261,36 @@ object-fit:contain;
 padding:var(--spacing-lg);
 }
 
-.project-type{
-font-family:var(--font-secondary);
-color:var(--color-accent);
-margin-bottom:var(--spacing-sm);
+.project-card video{
+align-items: center;
 }
 
-@media (min-width:1000px){
+/* Buff Life Photo Card */
+.buffpic-card{
+padding: var(--spacing-md);
+border-radius: var(--radius-lg);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: left;
+text-align: left;
+background-color: var(--color-card);
+}
 
-.hero-box{
+.buffpic-card img{
+border-radius: var(--radius-lg);
+padding-top: 15px;
+object-fit:fill;
+}
+
+/* Align cards and text differently in desktop mode */
+@media (min-width:1000px){
+.bio-box{
 grid-template-columns:220px 1fr;
 align-items:center;
-border-radius: var(--radius-lg);
 }
 
-.hero-text{
+.bio-text{
 text-align:left;
 }
 
