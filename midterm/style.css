@@ -173,184 +173,166 @@
 /* Background */
 html {
 background: var(--color-background);
-background-attachment: fixed; 
+background-attachment: fixed;
 }
 
 /* Nav Bar */
-.header{
-margin-bottom:var(--spacing-xl);
-font-size: 4rem;
+header {
+margin-bottom: var(--spacing-md);
 }
 
-nav ul{
-list-style:none;
-display:flex;
-gap:var(--spacing-lg);
-padding-bottom:var(--spacing-md);
+nav ul {
+list-style: none;
+display: flex;
+gap: var(--spacing-lg);
+padding-bottom: var(--spacing-md);
 }
 
-nav li a.selected{
+nav li a.selected {
 color: var(--color-accent);
 }
 
-nav a{
-color:var(--color-secondary);
-font-family:var(--font-secondary);
+nav a {
+color: var(--color-secondary);
+font-family: var(--font-secondary);
 font-size: 1.25rem;
 }
 
 /* Bio */
-.h1strong{
+.h1strong {
 color: var(--color-accent);
 }
 
-.bio-box{
-display:grid;
-grid-template-columns:1fr;
-gap:var(--spacing-lg);
-padding:var(--spacing-xl);
-border-radius:var(--radius-md);
-margin-bottom:var(--spacing-xl);
+.bio-box {
+display: grid;
+grid-template-columns: 220px 1fr;
+gap: var(--spacing-lg);
+padding: var(--spacing-xl);
+border-radius: var(--radius-md);
+margin: 0 auto var(--spacing-xl) auto;
 max-width: 1200px;
+align-items: center;
+}
+
+.pfp {
+width: 180px;
+height: 180px;
+border-radius: 50%;
+object-fit: cover;
+display: block;
 margin: 0 auto;
 }
 
-.pfp{
-width:180px;
-height:180px;
-border-radius:50%;
-object-fit:cover;
-display:block;
-margin:0 auto;
-}
-
-.bio-text{
-text-align:center;
+.bio-text {
+text-align: left;
 }
 
 /* Project Cards */
-.project-grid{
-display:grid;
-gap:var(--spacing-lg);
+.project-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: var(--spacing-lg);
 }
 
-.project-card{
+.project-card {
 padding: var(--spacing-md);
 border-radius: var(--radius-lg);
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: left;
 text-align: left;
 background-color: var(--color-card);
 }
 
-.project-card img{
+.project-card img {
 border-radius: var(--radius-lg);
 padding-top: 15px;
-height:220px;
+height: 220px;
 width: 520px;
-object-fit:contain;
+object-fit: contain;
 }
 
-.project-card-body{
-padding:var(--spacing-lg);
+.project-card-body {
+padding: var(--spacing-lg);
 }
 
-.project-card video{
-align-items: center;
+.project-card video {
+width: 100%;
+max-width: 600px;
+height: auto;
+display: block;
+margin: 0 auto;
 }
 
 /* Buff Life Photo Card */
-.buffpic-card{
+.buffpic-card {
 padding: var(--spacing-md);
 border-radius: var(--radius-lg);
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: left;
 text-align: left;
 background-color: var(--color-card);
 }
 
-.buffpic-card img{
+.buffpic-card img {
 border-radius: var(--radius-lg);
 padding-top: 15px;
-object-fit:fill;
-}
-
-/* Doctor's Brew Photo Card */
-.brewpic-card{
-padding: var(--spacing-md);
-border-radius: var(--radius-lg);
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: left;
-text-align: left;
-background-color: var(--color-card);
-}
-
-.brewpic-card img{
-border-radius: var(--radius-lg);
-padding-top: 15px;
-object-fit:fill;
+object-fit: fill;
 max-width: 500px;
-}
-
-.sm-brewpic-card img{
-padding-top: 15px;
-object-fit:fill;
-width: 500px;
+width: 100%;
 height: auto;
+}
+
+/* Brew Pics */
+.brewpic-card {
+padding: var(--spacing-md);
+border-radius: var(--radius-lg);
+display: flex;
+flex-direction: column;
 align-items: center;
+text-align: left;
+background-color: var(--color-card);
 }
 
-/* Align cards and text differently in 1200px mode */
-@media (min-width:1200px){
-.bio-box{
-grid-template-columns:220px 1fr;
-align-items:center;
+.brewpic-card img {
+border-radius: var(--radius-lg);
+padding-top: 15px;
+object-fit: fill;
+max-width: 500px;
+width: 100%;
+height: auto;
 }
 
-.bio-text{
-text-align:left;
+.sm-brewpic-card img {
+padding-top: 15px;
+object-fit: fill;
+width: 500px;
+max-width: 100%;
+height: auto;
+display: block;
+margin: 0 auto;
 }
 
-.project-grid{
-grid-template-columns:1fr 1fr;
-}
-}
-
-/* Align cards and text differently in 450px mode */
+/* 450px Layout */
 @media (max-width: 460px) {
-body{
-padding: 0.75rem;
+body {
+padding: var(--spacing-md);
 }
 
-nav ul{
-flex-wrap: wrap;
+nav ul {
 justify-content: center;
-gap: 0.75rem;
 }
 
-nav a{
-font-size: 1rem;
-}
-
-h1{
-font-size: 2rem;
-line-height: 1.1;
-}
-
-h2 {
-font-size: 1.4rem;
-line-height: 1.2;
-}
 
 .bio-box {
-padding: 1rem;
-gap: 1rem;
+grid-template-columns: 1fr;
+padding: var(--spacing-md);
+gap: var(--spacing-md);
+}
+
+.bio-text {
+text-align: center;
 }
 
 .pfp {
@@ -363,29 +345,30 @@ grid-template-columns: 1fr;
 }
 
 .project-card,
-.buffpic-card {
-padding: 0.75rem;
+.buffpic-card,
+.brewpic-card {
+padding:var(--spacing-md);
 }
 
 .project-card-body {
-padding: 1rem;
+padding: var(--spacing-md);
 }
 
 .project-card img,
-.buffpic-card img {
+.buffpic-card img,
+.brewpic-card img,
+.sm-brewpic-card img {
 width: 100%;
-height: auto;
 max-width: 100%;
-padding-top: 0.5rem;
+height: auto;
+padding-top: var(--spacing-sm);
 }
 
 .project-card video {
 width: 100%;
+max-width: 450px;
 height: auto;
 display: block;
-}
-
-.button {
-transform: none;
+margin: var(--spacing-sm) auto 0;
 }
 }
