@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ICA11</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@ function randomValueFromArray(array) {
 let characters = ["Walter White","Jack Black","Arthur Morgan"]
 let places = ["CU Boulder Engineering Center","Philadelphia","Cracker Barrel"]
 
-let events = ["mysteriously started floating away "
+let events = ["mysteriously started floating away","realized his true potential in another universe and dissapated","realized the ramifications of his actions and ran off"]
 
 // Partial return random string function
 
@@ -50,8 +50,12 @@ function returnRandomStoryString() {
   const randomPlace = randomValueFromArray(places);
   const randomEvent = randomValueFromArray(events);
   // 
-  let storyText = 
-  "It was 94 Fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day."
+    let storyText =
+    `It was 94 Fahrenheit outside, so Bob decided to enjoy this amazing American weather. 
+    When they got to ${randomPlace}, they bumped into ${randomCharacter}. 
+    Despite the apology, ${randomCharacter} was having a bad day and was ready for a fight.
+    Right when he was about to throw the first punch, he ${randomEvent}. 
+    Another victory for Bob! Now Bob just needs to lose some weight, they weigh 300 pounds and some exercise wouldn't hurt`;
 
   return storyText;
 }
@@ -61,17 +65,22 @@ function returnRandomStoryString() {
 generateBtn.addEventListener("click", generateStory);
 
 function generateStory() {
+  let newStory = returnRandomStoryString();
+
   if (customName.value !== "") {
     const name = customName.value;
+    newStory = newStory.replaceAll("Bob", name);
   }
 
   if (document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature = Math.round(94);
+    const weight = `${Math.round(300 / 14)} stone`;
+    const temperature = `${Math.round((94 - 32) * (5 / 9))} Celsius`;
+    newStory = newStory.replace("300 pounds", weight);
+    newStory = newStory.replace("94 Fahrenheit", temperature);
+    newStory = newStory.replace("American", "British");
   }
 
-  // TODO: replace "" with the correct expression
-  story.textContent = "";
+  story.textContent = newStory;
   story.style.visibility = "visible";
 }
 </script>
