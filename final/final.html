@@ -10,6 +10,51 @@
 
 </head>
 <body>
-    
+    <div class="battle-container">
+
+        <div class="volume-display">
+            <div class="volume-label">
+                <span class="enemy-name">The Volume Slider</span>
+                <span class="volume-number"><span id="volume-value">100</span> / 100</span>
+            </div>
+            <div class="volume-bar" id="volume-bar">
+                <span class="volume-bar-icon">🔊</span>
+                <div class="volume-bar-track">
+                    <div class="volume-bar-fill" id="volume-bar-fill"></div>
+                    <div class="volume-bar-handle" id="volume-bar-handle"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dialogue-box" id="dialogue-box">
+            Press Enter Battle to fight The Volume Slider.
+        </div>
+
+        <div id="out-of-battle">
+            <button class="main-btn" onclick="enterBattle()">Enter Battle</button>
+        </div>
+
+        <div id="in-battle" class="hidden">
+            <div class="main-menu">
+                <button class="main-btn" onclick="showAttackMenu()">Attack</button>
+                <button class="main-btn" onclick="showHealMenu()">Heal</button>
+                <button class="main-btn" onclick="runAway()">Run</button>
+            </div>
+
+            <div class="submenu hidden" id="attack-submenu">
+                <button class="move-btn" onclick="doSlash()">Slash</button>
+                <button class="move-btn" onclick="doFireball()">Fireball</button>
+                <button class="move-btn" onclick="doHeavyStrike()">Heavy Strike</button>
+                <button class="move-btn" onclick="doJab()">Jab</button>
+            </div>
+
+            <div class="submenu hidden" id="heal-submenu">
+                <button class="move-btn" onclick="doHeal()">Heal</button>
+                <button class="move-btn" onclick="doMinorHeal()">Minor Heal</button>
+                <button class="move-btn" onclick="doPray()">Pray</button>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
