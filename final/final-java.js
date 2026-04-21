@@ -1,7 +1,5 @@
-// volume starts at 100
 let volume = 100;
 
-// get elements from the page
 let volumeValue = document.getElementById("volume-value");
 let volumeBar = document.getElementById("volume-bar");
 let volumeBarFill = document.getElementById("volume-bar-fill");
@@ -13,12 +11,11 @@ let attackSubmenu = document.getElementById("attack-submenu");
 let healSubmenu = document.getElementById("heal-submenu");
 
 
-// helper to get a random number between min and max (inclusive)
+
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// update the volume number and bar on screen
 function updateVolume() {
     if (volume < 0) {
         volume = 0;
@@ -31,12 +28,10 @@ function updateVolume() {
     volumeBarHandle.style.left = volume + "%";
 }
 
-// change the text in the dialogue box
 function setDialogue(text) {
     dialogueBox.innerText = text;
 }
 
-// shake the volume slider when hit
 function shakeSlider() {
     volumeBar.classList.remove("shake");
     setTimeout(function() {
@@ -72,7 +67,7 @@ function showHealMenu() {
 }
 
 
-// ===== Attack moves =====
+//  Attack moves 
 
 function doSlash() {
     let damage = randomNumber(13, 20);
@@ -144,7 +139,7 @@ function applyAttack(damage, moveName, isCrit) {
 }
 
 
-// ===== Heal moves =====
+//  Heal moves
 
 function doHeal() {
     let amount = randomNumber(0, 30);
@@ -193,5 +188,4 @@ function applyHeal(amount, moveName) {
 }
 
 
-// set the bar to 100 when page loads
 updateVolume();
