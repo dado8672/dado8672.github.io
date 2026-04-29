@@ -26,6 +26,16 @@
             </div>
         </div>
 
+        <div class="player-display hidden" id="player-display">
+            <div class="player-label">
+                <span class="player-name">Player</span>
+                <span class="player-number"><span id="player-value">100</span> / 100</span>
+            </div>
+            <div class="player-bar">
+                <div class="player-bar-fill" id="player-bar-fill"></div>
+            </div>
+        </div>
+
         <div class="dialogue-box" id="dialogue-box">
             Press Enter Battle to fight The Volume Slider.
         </div>
@@ -38,7 +48,7 @@
             <div class="main-menu">
                 <button class="main-btn" onclick="showAttackMenu()">Attack</button>
                 <button class="main-btn" onclick="showHealMenu()">Heal</button>
-                <button class="main-btn" onclick="runAway()">Run</button>
+                <button class="main-btn" onclick="submitVolume()">Submit Volume</button>
             </div>
 
             <div class="submenu hidden" id="attack-submenu">
@@ -49,9 +59,14 @@
             </div>
 
             <div class="submenu hidden" id="heal-submenu">
-                <button class="move-btn" onclick="doHeal()">Heal</button>
-                <button class="move-btn" onclick="doMinorHeal()">Minor Heal</button>
-                <button class="move-btn" onclick="doPray()">Pray</button>
+                <button class="move-btn" onclick="pickHeal('heal')">Heal</button>
+                <button class="move-btn" onclick="pickHeal('minor')">Minor Heal</button>
+                <button class="move-btn" onclick="pickHeal('pray')">Pray</button>
+            </div>
+
+            <div class="submenu hidden" id="target-submenu">
+                <button class="move-btn" onclick="doHealOnTarget('self')">Heal Self</button>
+                <button class="move-btn" onclick="doHealOnTarget('slider')">Heal The Volume Slider</button>
             </div>
         </div>
 
